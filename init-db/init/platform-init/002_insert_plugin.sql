@@ -8,7 +8,8 @@ INSERT INTO public.plugin(id,
                           image_paths,
                           description,
                           distribution_methods,
-                          owner_user_id)
+                          owner_user_id,
+                          status)
 VALUES ('a4d21005-7d9b-4222-9651-7cf7432d8fab',
         '2024-03-16 22:59:57.567646+00',
         '2024-03-16 22:59:57.567646+00',
@@ -19,4 +20,5 @@ VALUES ('a4d21005-7d9b-4222-9651-7cf7432d8fab',
         null,
         'description',
         '[]',
-        'a4d21005-7d9b-4222-9651-7cf7432d8fab');
+        'a4d21005-7d9b-4222-9651-7cf7432d8fab',
+        'ACTIVE');

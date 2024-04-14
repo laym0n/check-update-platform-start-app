@@ -27,7 +27,7 @@ services:
         restart: unless-stopped
     platform:
         container_name: check-update-platform
-        image : laym0n/check-update-platform:1.0.0
+        image : laym0n/check-update-platform:1.1.0-SNAPSHOT
         env_file:
             - ../env/platform.env
             - ../env/private-platform.env

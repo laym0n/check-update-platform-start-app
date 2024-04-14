@@ -15,4 +15,4 @@ VALUES ('a4d21005-7d9b-4222-9651-7cf7432d8fab',
         null,
         '$2a$10$mDcJ/EjdpRouV.Lg1yKqAOOvXO7M2jlJxwYBcXYavyl.1luDFpIOS',
         true,
-        'SIMPLE_USER');
+        '["SIMPLE_USER"]');

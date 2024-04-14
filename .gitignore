@@ -11,3 +11,6 @@
 **.flattened-pom.xml
 
 **/private*.env
+
+/volume-db/postgres-platform
+/volume-db/postgres-stackoverflow-plugin
