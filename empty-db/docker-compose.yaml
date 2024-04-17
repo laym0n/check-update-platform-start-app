@@ -1,60 +1,60 @@
 services:
-    postgresql-platform:
-        container_name: postgresql-platform
-        image : postgres:15
-        environment:
-            POSTGRES_USER: user
-            POSTGRES_PASSWORD: pass
-            PGDATA: "/var/lib/postgresql/data/pgdata"
-            POSTGRES_DB: platform
-        ports:
-            - 5433:5432
-        networks:
-            platform-db:
-        restart: unless-stopped
-    postgresql-stackoverflow-plugin:
-        container_name: postgresql-stackoverflow-plugin
-        image : postgres:15
-        environment:
-            POSTGRES_USER: user
-            POSTGRES_PASSWORD: pass
-            PGDATA: "/var/lib/postgresql/data/pgdata"
-            POSTGRES_DB: plugin
-        ports:
-            - 5434:5432
-        networks:
-            stackoverflow-plugin-db:
-        restart: unless-stopped
-    platform:
-        container_name: check-update-platform
-        image : laym0n/check-update-platform:1.1.0-SNAPSHOT
-        env_file:
-            - ../env/platform.env
-            - ../env/private-platform.env
-        ports:
-            - 8080:8080
-        networks:
-            platform-db:
-            services:
-        depends_on:
-            - postgresql-platform
-        restart: unless-stopped
-    stackoverflow-plugin:
-        container_name: stackoverflow-plugin
-        image : laym0n/stackoverflow-plugin:1.0.0
-        env_file:
-            - ../env/plugin.env
-            - ../env/private-plugin.env
-        ports:
-            - 8081:8081
-        networks:
-            stackoverflow-plugin-db:
-            services:
-        depends_on:
-            - postgresql-stackoverflow-plugin
-            - platform
-        restart: unless-stopped
+  postgresql-platform:
+    container_name: postgresql-platform
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+      POSTGRES_DB: platform
+    ports:
+      - 5433:5432
+    networks:
+      platform-db:
+    restart: unless-stopped
+  postgresql-stackoverflow-plugin:
+    container_name: postgresql-stackoverflow-plugin
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+      POSTGRES_DB: plugin
+    ports:
+      - 5434:5432
+    networks:
+      stackoverflow-plugin-db:
+    restart: unless-stopped
+  platform:
+    container_name: check-update-platform
+    image: laym0n/check-update-platform:1.1.0-SNAPSHOT
+    env_file:
+      - ../env/platform.env
+      - ../env/private-platform.env
+    ports:
+      - 8080:8080
+    networks:
+      platform-db:
+      services:
+    depends_on:
+      - postgresql-platform
+    restart: unless-stopped
+  stackoverflow-plugin:
+    container_name: stackoverflow-plugin
+    image: laym0n/stackoverflow-plugin:1.0.0
+    env_file:
+      - ../env/plugin.env
+      - ../env/private-plugin.env
+    ports:
+      - 8081:8081
+    networks:
+      stackoverflow-plugin-db:
+      services:
+    depends_on:
+      - postgresql-stackoverflow-plugin
+      - platform
+    restart: unless-stopped
 networks:
-    services:
-    platform-db:
-    stackoverflow-plugin-db:
+  services:
+  platform-db:
+  stackoverflow-plugin-db:
