@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
   stackoverflow-plugin:
     container_name: stackoverflow-plugin
-    image: laym0n/stackoverflow-plugin:1.0.0
+    image: laym0n/stackoverflow-plugin:1.1.0-SNAPSHOT
     env_file:
       - ../env/plugin.env
       - ../env/private-plugin.env
