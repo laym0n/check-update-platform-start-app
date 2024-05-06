@@ -40,6 +40,7 @@ services:
     networks:
       platform-db:
       services:
+      platform-front-network:
     depends_on:
       - postgresql-platform
     restart: unless-stopped
@@ -58,7 +59,18 @@ services:
       - postgresql-stackoverflow-plugin
       - platform
     restart: unless-stopped
+  platform-front:
+    container_name: platform-front
+    image: laym0n/check-update-platform-front:1.0.0-SNAPSHOT
+    env_file:
+      - ../env/platform-front.env
+    ports:
+      - 3001:3000
+    networks:
+      platform-front-network:
+    restart: unless-stopped
 networks:
   services:
   platform-db:
   stackoverflow-plugin-db:
+    platform-front-network:
