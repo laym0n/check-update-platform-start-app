@@ -1,0 +1,18 @@
+INSERT INTO public.webresource(id,
+                               create_date,
+                               last_change_date,
+                               version,
+                               name,
+                               description,
+                               status,
+                               plugin_id,
+                               description_header)
+VALUES ('a4d21005-7d9b-4222-9651-7cf7432d8f01',
+        '2024-03-16 22:59:57.567646+00',
+        '2024-03-16 22:59:57.567646+00',
+        0,
+        '142121',
+        'Количество ответов 0',
+        'NOT_OBSERVE',
+        'a4d21005-7d9b-4222-9651-7cf7432d8f01',
+        'Unit Tests for comparing text files in NUnit');

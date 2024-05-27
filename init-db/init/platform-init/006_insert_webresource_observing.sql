@@ -1,0 +1,16 @@
+INSERT INTO public.webresource_observing(id,
+                                         create_date,
+                                         last_change_date,
+                                         version,
+                                         status,
+                                         need_notify,
+                                         user_id,
+                                         webresource_id)
+VALUES ('a4d21005-7d9b-4222-9651-7cf7432d8f05',
+        '2024-03-16 22:59:57.567646+00',
+        '2024-03-16 22:59:57.567646+00',
+        0,
+        'NOT_OBSERVE',
+        false,
+        'a4d21005-7d9b-4222-9651-7cf7432d8f01',
+        'a4d21005-7d9b-4222-9651-7cf7432d8f01');
